@@ -51,13 +51,25 @@
             justify-content: space-between;
             align-items: center;
         }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .header-logo {
+            height: 40px; /* Adjust based on your logo's proportions */
+            width: auto;
+        }
         
         .logo {
             font-family: "Instrument Serif", serif;
             font-weight: 400;
-            font-style: italic; /* Makes it italic */
-            font-size: 24px; /* Keep your original size */
-            color: var(--white); /* Keep your original color */
+            font-style: italic;
+            font-size: 24px;
+            color: var(--white);
+            /* Remove width: 100% if previously set */
         }
         
         nav ul {
@@ -440,7 +452,10 @@
     <!-- Header -->
     <header>
         <div class="container header-container">
-            <div class="logo">BIGWORLD 2025</div>
+            <div class="logo-container">
+                <img src="images/LOGO.jpg" alt="BigWorld Logo" class="header-logo">
+                <div class="logo">BIGWORLD 2025</div>
+            </div>
             <nav>
                 <ul>
                     <li><a href="#home">Home</a></li>
@@ -500,7 +515,7 @@
                 </div>
                 <div class="about-image">
                     <!-- Placeholder image - replace with your actual image -->
-                    <img src="https://via.placeholder.com/600x400/1d3563/ffffff?text=BIGWORLD+2025" alt="About BIGWORLD">
+                    <img src="images/poster.jpg" alt="About BIGWORLD">
                 </div>
             </div>
         </div>
