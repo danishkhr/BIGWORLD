@@ -269,20 +269,36 @@
             gap: 20px;
             margin-top: 40px;
         }
-        
+
         .venue-photo {
             border-radius: 10px;
             overflow: hidden;
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            position: relative; /* Required for caption positioning */
         }
-        
+
         .venue-photo img {
             width: 100%;
             height: 200px;
             object-fit: cover;
             transition: transform 0.3s;
+            display: block; /* Removes extra space below image */
         }
-        
+
+        /* Simple Caption Style */
+        .venue-caption {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: rgba(0, 0, 0, 0.7); /* Semi-transparent black */
+            color: white;
+            padding: 8px;
+            text-align: center;
+            font-size: 14px;
+        }
+
+        /* Preserve your existing hover effect */
         .venue-photo:hover img {
             transform: scale(1.05);
         }
@@ -357,6 +373,19 @@
             padding: 30px 0;
             text-align: center;
         }
+
+        .fabs-logo-footer {
+            text-align: center;
+            margin: 0 auto 20px; /* Centers horizontally with space below */
+            width: 80px; /* Match to your square logo dimensions */
+        }
+
+        .fabs-logo-footer img {
+            width: 100%;
+            height: auto;
+            border-radius: 4px; /* Optional: softens square edges */
+            display: block; /* Removes inline spacing */
+        }
         
         .social-links {
             margin-bottom: 20px;
@@ -428,6 +457,9 @@
     <!-- Hero Banner -->
     <section class="hero" id="home">
         <div class="container">
+            <div class="hero-logo">
+                <img src="images/logo.jpg" alt="BigWorld 2025 Logo">
+            </div>
             <h1>BIGWORLD 2025</h1>
             <p>Join us for an unforgettable 3-day international event for finance, banking, accounting, and business students from around the world!</p>
             <p><strong>Theme: Banking and Investment Grand Olympiad and Leadership Development</strong></p>
@@ -738,20 +770,25 @@
             
             <h3 style="text-align: center; margin: 50px 0 30px; color: var(--dark-blue);">Venue Photos</h3>
             <div class="venue-photos">
+                <!-- Photo 1 with Caption -->
                 <div class="venue-photo">
-                    <!-- Placeholder image - replace with actual venue photo -->
-                    <img src="https://via.placeholder.com/400x300/9fd4eb/1d3563?text=UUM+Campus" alt="UUM Campus">
+                    <img src="images/SAC.jpg" alt="Auditorium SAC">
+                    <div class="venue-caption">Auditorium SAC</div>
                 </div>
+                
+                <!-- Photo 2 with Caption -->
                 <div class="venue-photo">
-                    <!-- Placeholder image - replace with actual venue photo -->
-                    <img src="https://via.placeholder.com/400x300/9fd4eb/1d3563?text=Auditorium+SAC" alt="Auditorium SAC">
+                    <img src="images/UUM_CAMPUS.jpg" alt="Dewan Serbaguna">
+                    <div class="venue-caption">Dewan Serbaguna (Dewan Mas)</div>
                 </div>
+                
+                <!-- Photo 3 with Caption -->
                 <div class="venue-photo">
-                    <!-- Placeholder image - replace with actual venue photo -->
-                    <img src="https://via.placeholder.com/400x300/9fd4eb/1d3563?text=EDC+Hotel" alt="EDC Hotel">
+                    <img src="images/EDC_HOTEL.jpg" alt="EDC Hotel">
+                    <div class="venue-caption">EDC Hotel</div>
                 </div>
-            </div>
-        </div>
+                        </div>
+                    </div>
     </section>
 
     <!-- Registration Section -->
@@ -769,9 +806,6 @@
             
             <div class="fee-info">
                 <p>Registration Fee: <span>RM90.00</span> per person</p>
-                <!-- Placeholder for poster - replace with actual poster image -->
-                <img src="https://via.placeholder.com/600x800/ffffff/1d3563?text=BIGWORLD+Poster" alt="BIGWORLD Poster" style="max-width: 300px; margin-top: 30px; border: 2px solid var(--yellow);">
-            </div>
         </div>
     </section>
 
@@ -810,6 +844,9 @@
     <!-- Footer -->
     <footer>
         <div class="container">
+            <div class="fabs-logo-footer">
+                <img src="images/FABS_LOGO.jpg" alt="FABS Logo">
+            </div>
             <div class="social-links">
                 <a href="https://www.instagram.com/bigworlduum" target="_blank"><i class="fab fa-instagram"></i></a>
                 <a href="[INSERT FACEBOOK LINK]" target="_blank"><i class="fab fa-facebook"></i></a>
