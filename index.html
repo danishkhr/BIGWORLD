@@ -222,97 +222,93 @@
             margin-bottom: 15px;
         }
         
-        /* Event Details */
-        .event-details {
-            background-color: var(--white);
-        }
-        
-        .schedule {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 20px;
-            justify-content: center;
-        }
-        
-        .day-card {
-            background-color: var(--light-blue);
-            border-radius: 10px;
-            padding: 25px;
-            width: 300px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-        }
-        
-        .day-card h3 {
-            color: var(--dark-blue);
-            margin-bottom: 15px;
-            text-align: center;
-            border-bottom: 2px solid var(--yellow);
-            padding-bottom: 10px;
-        }
-        
-        .day-card p {
-            margin-bottom: 10px;
-        }
-        
-        .schedule-table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-top: 20px;
-        }
-        
-        .schedule-table th, .schedule-table td {
-            border: 1px solid var(--dark-blue);
-            padding: 8px;
-            text-align: left;
-        }
-        
-        .schedule-table th {
-            background-color: var(--dark-blue);
-            color: var(--white);
-        }
-        
-        .schedule-table tr:nth-child(even) {
-            background-color: #f2f2f2;
-        }
-        
-        .venue-photos {
+        /* Event Highlights */
+        .posters-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
-            margin-top: 40px;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 40px;
+            margin: 60px 0;
         }
 
-        .venue-photo {
-            border-radius: 10px;
+        .poster-card {
+            background: var(--white);
+            border-radius: 15px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.12);
             overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-            position: relative; /* Required for caption positioning */
+            transition: transform 0.3s, box-shadow 0.3s;
+            display: flex;
+            flex-direction: column;
         }
 
-        .venue-photo img {
+        .poster-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 30px rgba(0,0,0,0.18);
+        }
+
+        .poster-image-container {
+            flex: 1;
+            position: relative;
+            overflow: hidden;
+            padding: 20px;
+            background: var(--light-blue);
+        }
+
+        .poster-image {
             width: 100%;
-            height: 200px;
-            object-fit: cover;
+            height: 500px;
+            object-fit: contain;
             transition: transform 0.3s;
-            display: block; /* Removes extra space below image */
         }
 
-        /* Simple Caption Style */
-        .venue-caption {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            background: rgba(0, 0, 0, 0.7); /* Semi-transparent black */
-            color: white;
-            padding: 8px;
+        .poster-card:hover .poster-image {
+            transform: scale(1.08);
+        }
+
+        .poster-title {
+            background: var(--dark-blue);
+            color: var(--white);
+            padding: 20px;
+            margin: 0;
             text-align: center;
-            font-size: 14px;
+            font-size: 1.4rem;
+            letter-spacing: 0.5px;
         }
 
-        /* Preserve your existing hover effect */
-        .venue-photo:hover img {
-            transform: scale(1.05);
+        .poster-caption {
+            background: var(--white);
+            padding: 20px;
+            text-align: center;
+            min-height: 100px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-top: 4px solid var(--dark-blue);
+            font-size: 1.1rem;
+            color: var(--dark-blue);
+            font-weight: 600;
+        }
+
+        @media (max-width: 768px) {
+            .posters-grid {
+                grid-template-columns: 1fr;
+                gap: 30px;
+                margin: 40px 0;
+            }
+            
+            .poster-image {
+                height: 400px;
+            }
+            
+            .poster-title {
+                font-size: 1.2rem;
+                padding: 15px;
+            }
+            
+            .poster-caption {
+                padding: 15px;
+                min-height: 80px;
+                font-size: 1rem;
+            }
         }
         
         /* Registration Section */
@@ -386,17 +382,22 @@
             text-align: center;
         }
 
-        .fabs-logo-footer {
-            text-align: center;
-            margin: 0 auto 20px; /* Centers horizontally with space below */
-            width: 80px; /* Match to your square logo dimensions */
+        .footer-logos {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            margin-bottom: 20px;
         }
 
-        .fabs-logo-footer img {
+        .footer-logo {
+            width: 80px;
+        }
+
+        .footer-logo img {
             width: 100%;
             height: auto;
-            border-radius: 4px; /* Optional: softens square edges */
-            display: block; /* Removes inline spacing */
+            border-radius: 4px;
+            display: block;
         }
         
         .social-links {
@@ -476,8 +477,8 @@
                 <img src="images/LOGO.jpg" alt="BigWorld 2025 Logo">
             </div>
             <h1>BIGWORLD 2025</h1>
-            <p>Join us for an unforgettable 3-day international event for finance, banking, accounting, and business students from around the world!</p>
-            <p><strong>Theme: Banking and Investment Grand Olympiad and Leadership Development</strong></p>
+            <p>Join us for an unforgettable 3-day competition-based event for finance and banking students around the world</p>
+            <p><strong>Theme: Finnovate – Accelerating for a Sustainable Tomorrow</strong></p>
             <p><strong>Date: 8 August 2025 - 10 August 2025</strong></p>
             <p><strong>Location: Universiti Utara Malaysia (UUM)</strong></p>
             <p>BIGWORLD 2025 is your chance to unlock real-world experience, network with industry leaders, and put your skills to the ultimate test alongside passionate students from across the globe.</p>
@@ -508,10 +509,10 @@
                     </ul>
                     
                     <h3>Our Motto</h3>
-                    <p>"TOGETHER WE PROSPER"</p>
+                    <p>BIGWORLD 2025: TOGETHER WE PROSPER</p>
                     
                     <h3>Target Audience</h3>
-                    <p>Undergraduate Students from Finance, Banking, Accounting and Business courses! International students are also welcome to join this exciting event.</p>
+                    <p>Undergraduate students from finance and banking courses. International students are also welcome to join this exciting event.</p>
                 </div>
                 <div class="about-image">
                     <!-- Placeholder image - replace with your actual image -->
@@ -584,226 +585,44 @@
     </section>
 
     <!-- Event Details Section -->
-    <section class="section event-details" id="details">
+    <section class="section" id="highlights">
         <div class="container">
             <div class="section-title">
-                <h2>Event Details</h2>
+                <h2>Event Highlights</h2>
             </div>
-            
-            <h3 style="text-align: center; margin-bottom: 30px; color: var(--dark-blue);">3-Day Schedule</h3>
-            
-            <div style="margin-bottom: 50px;">
-                <h4 style="color: var(--dark-blue); margin-bottom: 15px;">Day 1: 8 August 2025 (Friday)</h4>
-                <table class="schedule-table">
-                    <tr>
-                        <th>Time</th>
-                        <th>Programme Flow</th>
-                        <th>Venue</th>
-                    </tr>
-                    <tr>
-                        <td>0720</td>
-                        <td>Bus Departure</td>
-                        <td>Hostel participants</td>
-                    </tr>
-                    <tr>
-                        <td>0730-0800</td>
-                        <td>Registration (Participants)</td>
-                        <td>Auditorium SAC (outside table)</td>
-                    </tr>
-                    <tr>
-                        <td>0800-0830</td>
-                        <td>Breakfast</td>
-                        <td>Auditorium SAC (outside table)</td>
-                    </tr>
-                    <tr>
-                        <td>0830-1030</td>
-                        <td>Opening Ceremony</td>
-                        <td>Auditorium SAC</td>
-                    </tr>
-                    <tr>
-                        <td>1030-1115</td>
-                        <td>Corporate/Sponsor Talk</td>
-                        <td>Auditorium SAC</td>
-                    </tr>
-                    <tr>
-                        <td>1115-1130</td>
-                        <td>Point Collection Activity 1 Released</td>
-                        <td>Auditorium SAC</td>
-                    </tr>
-                    <tr>
-                        <td>1130-1330</td>
-                        <td>Lunch & Prayers</td>
-                        <td>Auditorium SAC OR around the area</td>
-                    </tr>
-                    <tr>
-                        <td>1330-1400</td>
-                        <td>Introducing Challenge 1 Rules</td>
-                        <td>Auditorium SAC</td>
-                    </tr>
-                    <tr>
-                        <td>1400-1700</td>
-                        <td>Challenge 1</td>
-                        <td>Auditorium SAC</td>
-                    </tr>
-                    <tr>
-                        <td>1700-1800</td>
-                        <td>Interactive Session</td>
-                        <td>Dewan Serbaguna</td>
-                    </tr>
-                    <tr>
-                        <td>1800</td>
-                        <td>Dinner Distribution & Back to Hostel</td>
-                        <td>Dewan Serbaguna</td>
-                    </tr>
-                    <tr>
-                        <td>2200</td>
-                        <td>Submission Point Collection Activity 1</td>
-                        <td>-</td>
-                    </tr>
-                </table>
-                <p style="margin-top: 15px;"><strong>Dress Code:</strong> Formal Attire</p>
-            </div>
-            
-            <div style="margin-bottom: 50px;">
-                <h4 style="color: var(--dark-blue); margin-bottom: 15px;">Day 2: 9 August 2025 (Saturday)</h4>
-                <table class="schedule-table">
-                    <tr>
-                        <th>Time</th>
-                        <th>Programme Flow</th>
-                        <th>Venue</th>
-                    </tr>
-                    <tr>
-                        <td>0720</td>
-                        <td>Bus Departure</td>
-                        <td>Hostel participants</td>
-                    </tr>
-                    <tr>
-                        <td>0730-0800</td>
-                        <td>Breakfast</td>
-                        <td>Auditorium SAC (outside table)</td>
-                    </tr>
-                    <tr>
-                        <td>0800-1200</td>
-                        <td>Treasure Hunt</td>
-                        <td>SAC-PBS-Vmall-Masjid-Library (stations at shaded places)</td>
-                    </tr>
-                    <tr>
-                        <td>1200-1400</td>
-                        <td>Lunch & Prayers</td>
-                        <td>Auditorium SAC OR around the area</td>
-                    </tr>
-                    <tr>
-                        <td>1400-1500</td>
-                        <td>Forum</td>
-                        <td>Auditorium SAC</td>
-                    </tr>
-                    <tr>
-                        <td>1500-1600</td>
-                        <td>Workshop/Corporate Talk</td>
-                        <td>Auditorium SAC</td>
-                    </tr>
-                    <tr>
-                        <td>1600-1630</td>
-                        <td>Final Challenge released</td>
-                        <td>Auditorium SAC</td>
-                    </tr>
-                    <tr>
-                        <td>1630-1830</td>
-                        <td>Enquiries and Discussion Session</td>
-                        <td>Dewan Serbaguna</td>
-                    </tr>
-                    <tr>
-                        <td>1830-2000</td>
-                        <td>Dinner Distribution</td>
-                        <td>Dewan Serbaguna</td>
-                    </tr>
-                    <tr>
-                        <td>2000-2200</td>
-                        <td>Enquiries and Discussion Session</td>
-                        <td>Dewan Serbaguna</td>
-                    </tr>
-                    <tr>
-                        <td>2200</td>
-                        <td>Submission of FC & Back to Hostel</td>
-                        <td>Dewan Serbaguna</td>
-                    </tr>
-                </table>
-                <p style="margin-top: 15px;"><strong>Dress Code:</strong> BIGWORLD 2025 T-Shirt</p>
-            </div>
-            
-            <div>
-                <h4 style="color: var(--dark-blue); margin-bottom: 15px;">Day 3: 10 August 2025 (Sunday)</h4>
-                <table class="schedule-table">
-                    <tr>
-                        <th>Time</th>
-                        <th>Programme Flow</th>
-                        <th>Venue</th>
-                    </tr>
-                    <tr>
-                        <td>0650-0720</td>
-                        <td>Check out (Hostels)</td>
-                        <td>Hostel participants</td>
-                    </tr>
-                    <tr>
-                        <td>0720</td>
-                        <td>Bus Departure</td>
-                        <td>Hostel participants</td>
-                    </tr>
-                    <tr>
-                        <td>0730-0800</td>
-                        <td>Breakfast</td>
-                        <td>Auditorium SAC (outside table)</td>
-                    </tr>
-                    <tr>
-                        <td>0800-1200</td>
-                        <td>Final Challenge Presentation</td>
-                        <td>Auditorium SAC</td>
-                    </tr>
-                    <tr>
-                        <td>1200-1245</td>
-                        <td>Closing Ceremony + Award Ceremony (Participants & OC)</td>
-                        <td>Auditorium SAC</td>
-                    </tr>
-                    <tr>
-                        <td>1300-1330</td>
-                        <td>Preparation & Transportation to EDC</td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td>1330-1500</td>
-                        <td>Lunch & Prayers & Photoshoot</td>
-                        <td>EDC HOTEL</td>
-                    </tr>
-                    <tr>
-                        <td>1500</td>
-                        <td>Final Wrap-Up & Departure</td>
-                        <td>EDC HOTEL</td>
-                    </tr>
-                </table>
-                <p style="margin-top: 15px;"><strong>Dress Code:</strong> Formal Attire</p>
-            </div>
-            
-            <h3 style="text-align: center; margin: 50px 0 30px; color: var(--dark-blue);">Venue Photos</h3>
-            <div class="venue-photos">
-                <!-- Photo 1 with Caption -->
-                <div class="venue-photo">
-                    <img src="images/SAC.jpg" alt="Auditorium SAC">
-                    <div class="venue-caption">Auditorium SAC</div>
-                </div>
-                
-                <!-- Photo 2 with Caption -->
-                <div class="venue-photo">
-                    <img src="images/UUM_CAMPUS.jpg" alt="Dewan Serbaguna">
-                    <div class="venue-caption">Dewan Serbaguna (Dewan Mas)</div>
-                </div>
-                
-                <!-- Photo 3 with Caption -->
-                <div class="venue-photo">
-                    <img src="images/EDC_HOTEL.jpg" alt="EDC Hotel">
-                    <div class="venue-caption">EDC Hotel</div>
-                </div>
-                        </div>
+    
+            <div class="posters-grid">
+                <div class="poster-card">
+                    <h3 class="poster-title">Official Flyer</h3>
+                    <div class="poster-image-container">
+                        <img src="images/BW2025Flyer.png" class="poster-image" alt="Event Flyer">
                     </div>
+                    <div class="poster-caption">
+                        <p>8-10 August 2025 | Universiti Utara Malaysia</p>
+                    </div>
+                </div>
+    
+                <div class="poster-card">
+                    <h3 class="poster-title">Theme Reveal</h3>
+                    <div class="poster-image-container">
+                        <img src="images/themebw_poster.jpg" class="poster-image" alt="Theme Poster">
+                    </div>
+                    <div class="poster-caption">
+                        <p>FINNOVARE: Accelerating Sustainability</p>
+                    </div>
+                </div>
+    
+                <div class="poster-card">
+                    <h3 class="poster-title">Why Join?</h3>
+                    <div class="poster-image-container">
+                        <img src="images/introbw_poster.png" class="poster-image" alt="Introduction Poster">
+                    </div>
+                    <div class="poster-caption">
+                        <p>Transform Academic Knowledge into Skills</p>
+                    </div>
+                </div>
+            </div>
+        </div>
     </section>
 
     <!-- Registration Section -->
@@ -851,11 +670,15 @@
         </div>
     </section>
 
-    <!-- Footer -->
     <footer>
         <div class="container">
-            <div class="fabs-logo-footer">
-                <img src="images/FABS_LOGO.jpg" alt="FABS Logo">
+            <div class="footer-logos">
+                <div class="footer-logo">
+                    <img src="images/LOGO.jpg" alt="BigWorld Logo">
+                </div>
+                <div class="footer-logo">
+                    <img src="images/FABS_LOGO.jpg" alt="FABS Logo">
+                </div>
             </div>
             <div class="social-links">
                 <a href="https://www.instagram.com/bigworlduum" target="_blank"><i class="fab fa-instagram"></i></a>
